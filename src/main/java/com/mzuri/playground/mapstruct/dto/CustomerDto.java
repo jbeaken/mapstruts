@@ -17,4 +17,5 @@ public class CustomerDto {
     public List<OrderItemDto> orders;
     public String dateOfBirth;
     public double creditScore;
+    public String title;
 }
