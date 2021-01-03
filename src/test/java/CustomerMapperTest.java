@@ -33,6 +33,7 @@ public class CustomerMapperTest {
         customerDto.dateOfBirth = "09/12/1972";
         customerDto.customerName = "Filip";
         customerDto.creditScore = 4;
+        customerDto.title = "mister";
         OrderItemDto order1 = new OrderItemDto();
         order1.name = "Table";
         order1.quantity = 2L;
@@ -41,6 +42,7 @@ public class CustomerMapperTest {
         Customer customer = CustomerMapper.MAPPER.toCustomer( customerDto );
 
         assertThat( customer.getId() ).isEqualTo( 10 );
+        assertThat(customer.getTitle().value).isEqualTo("mister");
         assertThat( customer.getName() ).isEqualTo( "Filip" );
         assertThat( customer.getDateOfBirth().getDayOfMonth()).isEqualTo(9);
         assertThat(customer.getCreditScore()).isEqualTo(BigDecimal.valueOf(4.0));
